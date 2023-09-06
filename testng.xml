@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Regression Ios Simulator" enabled="true">
+        <parameter name="platform"  value="ios"/>
+        <packages>
+            <package name="org.example.test"/>
+        </packages>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="Regression Android Simulator" enabled="true">
+        <parameter name="platform"  value="android"/>
+        <packages>
+            <package name="org.example.test"/>
+        </packages>
+    </test>
+</suite>
