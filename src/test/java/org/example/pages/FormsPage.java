@@ -4,13 +4,13 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.example.actions.AndroidActions;
 import org.example.actions.AppiumActions;
-import org.example.actions.IOSActions;
+import org.example.test.BaseTest;
 import org.example.utils.AppiumDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -44,14 +44,10 @@ public class FormsPage {
     @AndroidFindBy(id = "android:id/message")
     private WebElement activateConfirmPopup;
 
-    public FormsPage(String platform) {
+    public FormsPage() {
         driver = AppiumDriverFactory.getDriver();
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        if (platform.equals("ios")) {
-            appiumActions = new IOSActions();
-        } else if (platform.equals("android")) {
-            appiumActions = new AndroidActions();
-        }
+        appiumActions = BaseTest.platformAppiumActions;
     }
 
     public FormsPage fillTextInput(String input) {

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="tests">
     <test verbose="2" preserve-order="true" name="Regression Ios Simulator" enabled="true">
         <parameter name="platform"  value="ios"/>
-        <packages>
-            <package name="org.example.test"/>
-        </packages>
+        <parameter name="deviceName"  value="iPhone 14 Pro"/>
+        <classes>
+            <class name="org.example.test.DemoTest"/>
+        </classes>
     </test>
 
     <test verbose="2" preserve-order="true" name="Regression Android Simulator" enabled="true">
         <parameter name="platform"  value="android"/>
-        <packages>
-            <package name="org.example.test"/>
-        </packages>
+        <parameter name="deviceName"  value="ThachPixel2XL"/>
+        <classes>
+            <class name="org.example.test.DemoTest"/>
+        </classes>
     </test>
 </suite>

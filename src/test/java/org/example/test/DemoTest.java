@@ -18,7 +18,7 @@ public class DemoTest extends BaseTest {
 	@Parameters({ "platform" })
 	@Test(groups = {"ios","android"})
 	public void fillFormsAndActivate(String platform) throws InterruptedException {
-		NavigationBar navigationBar = new NavigationBar(platform);
+		NavigationBar navigationBar = new NavigationBar();
 		FormsPage formsPage = navigationBar
 				.navigateToForms()
 				.fillTextInput("Thach Hoang")
