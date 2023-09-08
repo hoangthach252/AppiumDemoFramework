@@ -4,6 +4,7 @@ A sample Mobile Automation framework.
 
 Sample tests against [webdriverio native-demo-app](https://github.com/webdriverio/native-demo-app/releases) native app.
 Tests are running on local Android Emulator and IOS Simulator.
+The setup is done on Mac.
 
 Reference Links:
 * [Appium 2.1 documentation](https://appium.io/docs/en/2.1/intro/ )
@@ -13,12 +14,15 @@ Reference Links:
 run/debug test from testng.xml
 
 
-* run tests in Parallel
-TBD
+* run tests in Parallel: 2 threads running tests on 1 Android and 1 IOS phones. Parallel is in Tests level. 
+Check testng.xml for more detail.
+  ```shell
+  $ mvn clean test
+  ```
 
 
 ## Allure reports (to be added)
-Allure report will contain framework logs, Selenide browser interaction logs, screenshots and page sources for
+Allure report will contain framework logs, Appium interaction logs, screenshots and page sources for
 failing test cases
 
 * [Allure CLI](https://docs.qameta.io/allure/#_commandline) should be installed
@@ -28,8 +32,7 @@ failing test cases
   $ allure serve
   ```
 
-
-## Logback configuration (to be added)
+## Logback configuration
 
 You can find logback configuration here `src/test/resources/logback-test.xml`
 
